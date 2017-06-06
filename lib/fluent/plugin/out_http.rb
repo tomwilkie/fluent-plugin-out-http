@@ -86,6 +86,8 @@ class Fluent::HTTPOutput < Fluent::Output
   end
 
   def set_header(req, tag, time, record)
+    req['X-Fluent-Tag'] = tag
+    req['X-Fluent-Time'] = time
     req
   end
 
